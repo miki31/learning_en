@@ -2,10 +2,9 @@ package com.vocabulary.en.learning.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Data
 @Entity
@@ -21,6 +20,11 @@ public class User {
     private String nickName;
     private Date birthday;
     private String photo;
+
+    @ManyToMany
+    @JoinTable(name = "user_role",
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles;
 
 
 }
