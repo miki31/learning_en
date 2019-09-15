@@ -2,7 +2,7 @@ use callan_vocabulary;
 
 INSERT INTO user (id, first_name, last_name, nick_name, birthday, password, email, photo) VALUES
 (1, 'SUPERAdmin', 'Sur_SUPERAdmin', 'aaa', '1970-1-1', '$2a$10$.xysUEZxutiwXaduiJJ8oeWpXU9FbU5W7ow9.0KdjBepM0w86ZAT.', 'super_admin@gmail.com', null),
-(2, 'Admin', 'Sur_Admin', 'mmm', '1975-1-1', '$2a$10$.xysUEZxutiwXaduiJJ8oeWpXU9FbU5W7ow9.0KdjBepM0w86ZAT.', 'admin.com', null),
+(2, 'Admin', 'Sur_Admin', 'mmm', '1975-1-1', '$2a$10$.xysUEZxutiwXaduiJJ8oeWpXU9FbU5W7ow9.0KdjBepM0w86ZAT.', 'admin@gmail.com', null),
 (3, 'Manager', 'Sur_Manager', 'sss', '1980-1-1', '$2a$10$.xysUEZxutiwXaduiJJ8oeWpXU9FbU5W7ow9.0KdjBepM0w86ZAT.', 'manager@gmail.com', null),
 (4, 'User', 'Sur_User', 'uuu', '1985-1-1', '$2a$10$.xysUEZxutiwXaduiJJ8oeWpXU9FbU5W7ow9.0KdjBepM0w86ZAT.', 'user@gmail.com', null),
 (5, 'TRANSLATOR', 'Sur_TRANSLATOR', 'ttt', '1990-1-1', '$2a$10$.xysUEZxutiwXaduiJJ8oeWpXU9FbU5W7ow9.0KdjBepM0w86ZAT.', 'translator@gmail.com', null),
