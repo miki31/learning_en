@@ -13,6 +13,8 @@ public class ExampleEn {
     @Id
     @GeneratedValue
     private Long id;
+
+    @Column(columnDefinition = "TEXT")
     private String example;
 
     @OneToMany(mappedBy = "exampleEn", fetch = FetchType.EAGER)

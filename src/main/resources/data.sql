@@ -36,4 +36,17 @@ INSERT INTO user_role(user_id, role_id) VALUES
 (8,4),
 (9,4),
 (10,4),
-(11,4)
+(11,4);
+
+
+INSERT INTO word_en(id, word) VALUES
+(1, "deny");
+
+INSERT INTO word_ua(id, word) VALUES
+(1, "заперечувати");
+
+INSERT INTO example_en(id, example)VALUES
+(1, 'We usually use the emphatic "do" when we want to deny something that someone has said because we know it is not true');
+
+INSERT INTO en_ua_vocabulary(id, word_en_id, word_ua_id, example_en_id)VALUES
+(1, 1, 1, 1);
