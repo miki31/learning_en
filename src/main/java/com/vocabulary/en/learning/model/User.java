@@ -1,8 +1,10 @@
 package com.vocabulary.en.learning.model;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Set;
 
@@ -20,7 +22,8 @@ public class User {
     private String nickName;
 
     @Column(columnDefinition = "DATE")
-    private Date birthday;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate birthday;
     private String photo;
 
     @ManyToMany

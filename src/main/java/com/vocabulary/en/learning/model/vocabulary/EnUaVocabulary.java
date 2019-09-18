@@ -14,6 +14,7 @@ public class EnUaVocabulary {
     @Id
     @GeneratedValue
     private Long id;
+    private int page;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
     @JoinColumn(name = "word_en_id", nullable = false)
@@ -26,5 +27,6 @@ public class EnUaVocabulary {
     @ManyToOne(optional = false, fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
     @JoinColumn(name = "example_en_id", nullable = false)
     private ExampleEn exampleEn;
+
 
 }

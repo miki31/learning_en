@@ -57,6 +57,7 @@ CREATE TABLE example_en
 CREATE TABLE en_ua_vocabulary
 (
     id INT AUTO_INCREMENT,
+    page INT,
     example_en_id INT,
     word_en_id INT,
     word_ua_id INT,
