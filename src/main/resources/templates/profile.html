@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security5">
-<head>
-    <meta charset="UTF-8">
-    <title>User Profile</title>
-</head>
+<head th:replace="base-layout :: head"></head>
 <body>
+<div th:replace="base-layout :: header"></div>
+
 <h1>це сторінка профілю користувача</h1>
     <table>
         <tr>
@@ -24,5 +23,7 @@
 
         </tr>
     </table>
+
+<div th:replace="base-layout :: footer"></div>
 </body>
 </html>

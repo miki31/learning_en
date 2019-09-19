@@ -16,6 +16,19 @@ public class WelcomeController {
     @Autowired
     private UserService userService;
 
+    @ModelAttribute("title")
+    public void addAttribute(Model model){
+        model.addAttribute("title", "Вітаємо");
+    }
+
+    @ModelAttribute("user")
+    public User activeUser(Authentication authentication){
+        if (authentication == null) {
+            return null;
+        }
+        return userService.findUserByEmail(authentication.getName()).get();
+    }
+
     @GetMapping("/")
     public String sayWelcome(Model model){
         return "welcome";

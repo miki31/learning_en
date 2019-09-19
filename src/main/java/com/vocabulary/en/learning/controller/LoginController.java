@@ -26,7 +26,6 @@ public class LoginController {
 
     @GetMapping("/login")
     public String login(){
-        WordEn wordEn = new WordEn();
         return "login";
     }
 

@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security5">
-<head>
+<head th:fragment="head">
     <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+    <link rel="shortcut icon" type="image/png" href="/images/library-logo.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <title>Layouts</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="/css/core.css" rel="stylesheet" media="screen" th:href="@{/css/core.css}"/>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top" th:fragment="header">
@@ -24,6 +28,9 @@
                 <li th:classappend="${module == 'dashboard' ? 'active' : ''}">
                     <a href="#" th:href="@{/dashboard}">Dashboard</a>
                 </li>
+                <li>
+                    <a href="#" sec:authorize="hasAuthority('ADMIN')">Функції адміна</a>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li th:if="${#authorization.expression('!isAuthenticated()')}">
@@ -37,7 +44,9 @@
                     </a>
                 </li>
                 <li th:if="${#authorization.expression('isAuthenticated()')}">
-                    <a href="#" th:href="@{/user/profile}"><span th:text="${user.firstname}"></span></a>
+<!--                    TODO: виводити імя юзера-->
+                    <a href="#" th:href="@{/user/profile}"><span th:text="${user.firstName}"></span></a>
+<!--                    <a href="#" th:href="@{/user/profile}"><span>імя юзера</span></a>-->
 
                 </li>
                 <li th:if="${#authorization.expression('isAuthenticated()')}">
@@ -50,7 +59,7 @@
     </div>
 </div>
 
-<div th:fragment="footer">
+<div class="navbar navbar-inverse navbar-fixed-bottom" th:fragment="footer">
     &copy; 2019 Study English by Callan method
 </div>
 </body>

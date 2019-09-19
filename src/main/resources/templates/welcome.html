@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security5">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome</title>
-    <link rel="shortcut icon" type="image/png" href="/images/icon.png">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="/css/core.css" rel="stylesheet" media="screen" th:href="@{/css/core.css}"/>
-</head>
+<head th:replace="base-layout :: head"></head>
 <body>
 
 <!--<div th:replace="base-layout :: header"></div>-->
@@ -29,7 +21,7 @@
 
 <div th:replace="base-layout :: header"></div>
 <div class="container hero-unit">
-    <h1>Ласкаво просимо до нашої бібліотеки</h1>
+    <h1>Уроки англійської мови</h1>
 
     <div sec:authorize="!isAuthenticated()">
         <p>Зареєструйтеся або увійдіть, що б почати користуватися бібліотекою</p>
@@ -53,8 +45,10 @@
     <div sec:authorize="hasAuthority('LIBRARIAN')">
         This content is only shown to librarian.
     </div>
-    <div th:replace="base-layout :: footer"></div>
 </div>
+<div th:replace="base-layout :: footer"></div>
+
+
 </body>
 </html>
 
